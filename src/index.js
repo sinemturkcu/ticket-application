@@ -1,12 +1,13 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Register from './pages/Register';
-import Login from './pages/Login';
-import Navbar from './components/navbar'
-import SelamAdmin from './pages/SelamAdmin';
-import SelamUser from './pages/SelamUser';
+import Register from "./pages/Register";
+import Login from "./pages/Login";
+import Navbar from "./components/navbar";
+import SelamAdmin from "./pages/SelamAdmin";
+import SelamUser from "./pages/SelamUser";
+import Ticket from "./pages/Ticket";
 
 <script
   src="https://cdnjs.cloudflare.com/ajax/libs/react-modal/3.14.3/react-modal.min.js"
@@ -18,19 +19,20 @@ import SelamUser from './pages/SelamUser';
 class MyElement extends React.Component {
   render() {
     return (
-  
       <BrowserRouter>
-      <Navbar/>
-      <Routes>
-        <Route path="/register" element={<Register />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/selamAdmin" element={<SelamAdmin />} />
-        <Route path="/selamUser" element={<SelamUser />} />
-    
-        <Route path="/" element={<Register />} />
-      </Routes>
-    </BrowserRouter>
-    )}}
-    
-    const root = ReactDOM.createRoot(document.getElementById("root"));
-    root.render(<MyElement />);
+        <Routes>
+          <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/selamAdmin" element={<SelamAdmin />} />
+          <Route path="/selamUser" element={<SelamUser />} />
+          <Route path="/ticket" element={<Ticket />} />
+
+          <Route path="/" element={<Register />} />
+        </Routes>
+      </BrowserRouter>
+    );
+  }
+}
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<MyElement />);
