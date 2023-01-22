@@ -1,15 +1,15 @@
 import React from "react";
-import TicketCard from "../components/main";
+import HeroSection from "../components/heroSection";
 import Navbar from "../components/navbar";
 
-class Ticket extends React.Component {
+class Main extends React.Component {
   render() {
     return (
       <div>
         <Navbar />
-        <TicketCard />
+        <HeroSection />
       </div>
     );
   }
 }
-export default Ticket;
+export default Main;

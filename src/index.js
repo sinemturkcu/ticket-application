@@ -7,7 +7,8 @@ import Login from "./pages/Login";
 import Navbar from "./components/navbar";
 import SelamAdmin from "./pages/SelamAdmin";
 import SelamUser from "./pages/SelamUser";
-import Ticket from "./pages/Ticket";
+import Main from "./pages/Main";
+import TicketCard from "./components/main";
 
 <script
   src="https://cdnjs.cloudflare.com/ajax/libs/react-modal/3.14.3/react-modal.min.js"
@@ -25,9 +26,9 @@ class MyElement extends React.Component {
           <Route path="/login" element={<Login />} />
           <Route path="/selamAdmin" element={<SelamAdmin />} />
           <Route path="/selamUser" element={<SelamUser />} />
-          <Route path="/ticket" element={<Ticket />} />
+          <Route path="/ticket" element={<TicketCard />} />
 
-          <Route path="/" element={<Register />} />
+          <Route path="/" element={<Main />} />
         </Routes>
       </BrowserRouter>
     );
