@@ -5,7 +5,7 @@ import Ticket from "../pages/Ticket";
 function FindRoadCard() {
   return (
     <>
-      <div class="max-w-full p-40 bg-white border border-gray-200 rounded-lg shadow dark:bg-white-800 dark:border-gray-700 findRoadField">
+      <div class="max-w-lg p-20 bg-white rounded-lg dark:bg-white-800 ">
         <form>
           <div>
             <label

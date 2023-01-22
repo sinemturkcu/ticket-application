@@ -8,7 +8,7 @@ import Navbar from "./components/navbar";
 import SelamAdmin from "./pages/SelamAdmin";
 import SelamUser from "./pages/SelamUser";
 import Main from "./pages/Main";
-import TicketCard from "./components/main";
+import TicketCard from "./components/ticketCard";
 import Ticket from "./pages/Ticket";
 
 <script
