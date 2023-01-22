@@ -6,6 +6,7 @@ class Ticket extends React.Component {
     return (
       <div>
         <Navbar />
+
         <div className="mt-10 mx-20 flex justify-center grid grid-cols-2 gap-2 mb-2">
           <div>
             <TicketCard />
