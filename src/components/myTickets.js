@@ -34,6 +34,9 @@ class MyTickets extends Component {
         <div className="grid grid-cols-1 justify-items-center mb-10 cards">
           {this.state.myTickets.map((ticket) => {
             console.log(ticket);
+            if (ticket.status === "TICKET_STATUS_PURCHASED") {
+              ticket.status = "PURCHASED";
+            }
             return (
               <>
                 <div class=" p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-white-800 dark:border-gray-700 mb-10 mt-10 w-11/12 ">
@@ -52,8 +55,11 @@ class MyTickets extends Component {
                   <div className="mt-2 text-md">
                     <div>Departure Time: {ticket.busDepartureTime}</div>
                   </div>
-                  <div className="mt-2 mb-5 text-md">
+                  <div className="mt-2 text-md">
                     <div>Ticket Date: {ticket.ticketDate}</div>
+                  </div>
+                  <div className="mt-2 mb-5 text-lg text-red-700 text-bold font-semibold tracking-tight">
+                    <div>Ticket Status: {ticket.status}</div>
                   </div>
 
                   <div className="grid grid-cols-3 gap-3 mb-3 ">
@@ -70,7 +76,6 @@ class MyTickets extends Component {
                     </div>
                   </div>
                 </div>
-                ;
               </>
             );
           })}
