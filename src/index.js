@@ -10,6 +10,8 @@ import SelamUser from "./pages/SelamUser";
 import Main from "./pages/Main";
 import TicketCard from "./components/ticketCard";
 import Ticket from "./pages/Ticket";
+import AdminHome from "./pages/Admin/AdminHome";
+import "flowbite";
 
 <script
   src="https://cdnjs.cloudflare.com/ajax/libs/react-modal/3.14.3/react-modal.min.js"
@@ -28,6 +30,7 @@ class MyElement extends React.Component {
           <Route path="/selamAdmin" element={<SelamAdmin />} />
           <Route path="/selamUser" element={<SelamUser />} />
           <Route path="/ticket" element={<Ticket />} />
+          <Route path="admin/home" element={<AdminHome />} />
 
           <Route path="/" element={<Main />} />
         </Routes>
