@@ -2,7 +2,7 @@ import React from "react";
 import AllUsersTable from "../../components/allUsersTable";
 import Sidebar from "../../components/sidebar";
 
-class SelamAdmin extends React.Component {
+class AllUsers extends React.Component {
   render() {
     return (
       <div>
@@ -19,4 +19,4 @@ class SelamAdmin extends React.Component {
     );
   }
 }
-export default SelamAdmin;
+export default AllUsers;
