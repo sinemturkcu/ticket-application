@@ -1,12 +1,19 @@
 import axios from "axios";
 
-export default class ResumeService {
+export default class TicketService {
   getAllTickets() {
     return axios.get("http://localhost:8082/api/ticket/getAll");
   }
-  getByFilter(departureCity, destinationCity) {
-    return axios.post(
-      `http://localhost:8082/api/ticket/getByFilter?departureCity=${departureCity}&destinationCity=${destinationCity}`
-    );
-  }
 }
+const backendApiUrl = "http://localhost:8082/api";
+
+export const GetMyTickets = (email) => {
+  var request = fetch(backendApiUrl + "/ticket/getByEmail?email=" + email, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+
+  return request;
+};
