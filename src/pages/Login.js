@@ -26,7 +26,7 @@ function Login() {
         localStorage.setItem("role", result.userDto.role);
 
         if (localStorage.getItem("role") === "ADMIN") {
-          window.location.href = "/selamAdmin";
+          window.location.href = "/admin/home";
         } else {
           window.location.href = "/selamUser";
         }
