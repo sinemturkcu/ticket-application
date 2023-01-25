@@ -1,6 +1,12 @@
+import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import AdminService from "../services/AdminService";
+import AdminService from "../services/AxiosService";
+import { deleteUserById } from "../services/adminService2";
+
+function deleteUser() {
+  deleteUserById({});
+}
 
 function DeleteUserTable() {
   const [users, user] = useState([]);
