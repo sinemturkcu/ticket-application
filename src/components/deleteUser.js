@@ -1,7 +1,6 @@
-import axios from "axios";
-import React, { useState, useEffect, Component } from "react";
-import { getUser } from "../services/adminService2";
-import { deleteUserById } from "../services/adminService2";
+import React, { Component } from "react";
+import { getUser } from "../services/UserService";
+import { deleteUserById } from "../services/UserService";
 
 class DeleteUserTable extends Component {
   state = {
