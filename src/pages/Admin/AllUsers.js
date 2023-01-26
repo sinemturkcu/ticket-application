@@ -5,7 +5,7 @@ import Sidebar from "../../components/sidebar";
 function AllUsers() {
   const isAdmin = localStorage.getItem("role") === "ADMIN";
   if (isAdmin === false) {
-    alert("Only admin see all of the users");
+    alert("Full authentication required for this field");
   }
   return (
     <div>
