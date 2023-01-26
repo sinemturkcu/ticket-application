@@ -102,7 +102,7 @@ export default function Sidebar() {
                 </li>
                 <li>
                   <a
-                    href="#"
+                    href="/admin/addUser"
                     class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
                   >
                     Add User
@@ -110,7 +110,7 @@ export default function Sidebar() {
                 </li>
                 <li>
                   <a
-                    href="#"
+                    href="/admin/deleteUser"
                     class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
                   >
                     Delete User
@@ -169,7 +169,7 @@ export default function Sidebar() {
               <ul id="dropdown-example2" class="hidden py-2 space-y-2">
                 <li>
                   <a
-                    href="#"
+                    href="/admin/allVehicles"
                     class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
                   >
                     All Vehicles
@@ -177,7 +177,7 @@ export default function Sidebar() {
                 </li>
                 <li>
                   <a
-                    href="#"
+                    href="/admin/addVehicle"
                     class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
                   >
                     Add Vehicle
