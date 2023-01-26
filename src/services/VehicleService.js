@@ -5,6 +5,7 @@ export const setVehicle = (body) => {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
+      Authorization: "Bearer " + localStorage.getItem("accessToken"),
     },
     body: JSON.stringify(body),
   });
@@ -17,6 +18,7 @@ export const getVehicle = (body) => {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
+      Authorization: "Bearer " + localStorage.getItem("accessToken"),
     },
     body: JSON.stringify(body),
   });
@@ -31,6 +33,7 @@ export const deleteVehicleById = (userId) => {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
+        Authorization: "Bearer " + localStorage.getItem("accessToken"),
       },
       body: JSON.stringify(),
     }

@@ -5,6 +5,7 @@ export const setUserDetails = (body) => {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
+      Authorization: "Bearer " + localStorage.getItem("accessToken"),
     },
     body: JSON.stringify(body),
   });
@@ -16,6 +17,7 @@ export const getUser = (body) => {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
+      Authorization: "Bearer " + localStorage.getItem("accessToken"),
     },
     body: JSON.stringify(body),
   });
@@ -29,6 +31,7 @@ export const deleteUserById = (userId) => {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
+        Authorization: "Bearer " + localStorage.getItem("accessToken"),
       },
       body: JSON.stringify(),
     }
