@@ -30,9 +30,12 @@ export const UsersTickets = () => {
   return request;
 };
 
-export const GetByDepartureAndDirections = (departureCity, destinationCity) => {
+export const GetByDepartureAndDirections = ({
+  departureCity,
+  destinationCity,
+}) => {
   var request = fetch(
-    "http://localhost:8082/api/vehicle/getVehicle?departureCity=" +
+    "http://localhost:8082/api/vehicle/getVehicle/?departureCity=" +
       departureCity +
       "&destinationCity=" +
       destinationCity,
@@ -40,6 +43,7 @@ export const GetByDepartureAndDirections = (departureCity, destinationCity) => {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
+        Authorization: "Bearer " + localStorage.getItem("accessToken"),
       },
     }
   );
