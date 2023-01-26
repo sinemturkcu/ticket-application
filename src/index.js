@@ -21,6 +21,7 @@ import MyTickets from "./pages/MyTickets";
 import FindBus from "./pages/FindBus";
 import DeleteVehicle from "./pages/Admin/DeleteVehicle";
 import UsersTickets from "./pages/Admin/UsersTickets";
+import BuyTicketPage from "./pages/BuyTicket";
 
 <script
   src="https://cdnjs.cloudflare.com/ajax/libs/react-modal/3.14.3/react-modal.min.js"
@@ -45,6 +46,7 @@ class MyElement extends React.Component {
           <Route path="admin/allVehicles" element={<AllVehicles />} />
           <Route path="admin/addVehicle" element={<AddVehicle />} />
           <Route path="/myTickets" element={<MyTickets />} />
+          <Route path="/buyTicket" element={<BuyTicketPage />} />
           <Route path="/findBus" element={<FindBus />} />
           <Route path="admin/deleteUser" element={<DeleteUser />} />
           <Route path="admin/deleteVehicle" element={<DeleteVehicle />} />

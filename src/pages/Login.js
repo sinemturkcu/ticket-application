@@ -28,7 +28,7 @@ function Login() {
         if (localStorage.getItem("role") === "ADMIN") {
           window.location.href = "/admin/home";
         } else {
-          window.location.href = "/selamUser";
+          window.location.href = "/myTickets";
         }
       })
       .catch((err) => console.log(err));
@@ -85,26 +85,18 @@ function Login() {
                 </div>
 
                 <div class="flex items-start">
-                  <div class="flex items-center h-5">
-                    <input
-                      id="terms"
-                      aria-describedby="terms"
-                      type="checkbox"
-                      class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800"
-                      required=""
-                    />
-                  </div>
+                  <div class="flex items-center h-5"></div>
                   <div class="ml-3 text-sm">
                     <label
                       for="terms"
                       class="font-light text-gray-500 dark:text-gray-300"
                     >
-                      I accept the{" "}
+                      If you dont have an account{" "}
                       <a
                         class="font-medium text-primary-600 hover:underline dark:text-primary-500"
-                        href="#"
+                        href="/register"
                       >
-                        Terms and Conditions
+                        Register
                       </a>
                     </label>
                   </div>

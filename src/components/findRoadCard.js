@@ -157,7 +157,10 @@ class FindRoadCard extends Component {
                       <tbody>
                         {this.state.tickets.map((user) => (
                           <tr class="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100">
-                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                            <td
+                              class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"
+                              key={user.id}
+                            >
                               {user.id}
                             </td>
                             <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
@@ -186,7 +189,7 @@ class FindRoadCard extends Component {
                                         class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 mt-5 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900"
                                         onClick={(e) => {
                                           e.preventDefault();
-                                          //           window.location.href = "/myTickets";
+                                          window.location.href = "/myTickets";
                                         }}
                                       >
                                         Reservation
@@ -223,7 +226,7 @@ class FindRoadCard extends Component {
                                         class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 mt-5 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900"
                                         onClick={(e) => {
                                           e.preventDefault();
-                                          //   window.location.href = "/buyTicket";
+                                          window.location.href = "/myTickets";
                                         }}
                                       >
                                         Buy
