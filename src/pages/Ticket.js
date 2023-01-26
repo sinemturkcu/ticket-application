@@ -8,7 +8,6 @@ class Ticket extends React.Component {
     return (
       <div>
         <Navbar />
-        <FindRoadCard />
         <TicketCard />
       </div>
     );
