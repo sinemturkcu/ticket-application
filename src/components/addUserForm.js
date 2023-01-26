@@ -1,5 +1,5 @@
 import React from "react";
-import { setUserDetails } from "../services/adminService2";
+import { setUserDetails } from "../services/UserService";
 
 function setUser() {
   setUserDetails({

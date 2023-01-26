@@ -1,7 +1,7 @@
 const backendApiUrl = "http://localhost:8082/api";
 
-export const setVehicle = (body) => {
-  var request = fetch("http://localhost:8082/api/vehicle/saveVehicle", {
+export const setUserDetails = (body) => {
+  var request = fetch("http://localhost:8082/api/user/saveUser", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -11,9 +11,8 @@ export const setVehicle = (body) => {
 
   return request;
 };
-
-export const getVehicle = (body) => {
-  var request = fetch(backendApiUrl + "/vehicle/getAll", {
+export const getUser = (body) => {
+  var request = fetch(backendApiUrl + "/user/getAll", {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -23,10 +22,9 @@ export const getVehicle = (body) => {
 
   return request;
 };
-
-export const deleteVehicleById = (userId) => {
+export const deleteUserById = (userId) => {
   var request = fetch(
-    "http://localhost:8082/api/vehicle/delete/?id=" + userId,
+    "http://localhost:8082/api/user/deleteUser/?id=" + userId,
     {
       method: "DELETE",
       headers: {

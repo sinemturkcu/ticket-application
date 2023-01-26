@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { Component } from "react";
-import { getUser } from "../services/adminService2";
+import { getUser } from "../services/UserService";
 
 class DeleteUserTable extends Component {
   state = {
