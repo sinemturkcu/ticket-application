@@ -17,3 +17,19 @@ export const GetMyTickets = (email) => {
 
   return request;
 };
+export const GetByDepartureAndDirections = (departureCity, destinationCity) => {
+  var request = fetch(
+    "http://localhost:8082/api/vehicle/getVehicle?departureCity=" +
+      departureCity +
+      "&destinationCity=" +
+      destinationCity,
+    {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }
+  );
+
+  return request;
+};
