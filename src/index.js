@@ -20,6 +20,7 @@ import AddVehicle from "./pages/Admin/AddVehicle";
 import MyTickets from "./pages/MyTickets";
 import FindBus from "./pages/FindBus";
 import DeleteVehicle from "./pages/Admin/DeleteVehicle";
+import UsersTickets from "./pages/Admin/UsersTickets";
 
 <script
   src="https://cdnjs.cloudflare.com/ajax/libs/react-modal/3.14.3/react-modal.min.js"
@@ -47,6 +48,7 @@ class MyElement extends React.Component {
           <Route path="/findBus" element={<FindBus />} />
           <Route path="admin/deleteUser" element={<DeleteUser />} />
           <Route path="admin/deleteVehicle" element={<DeleteVehicle />} />
+          <Route path="admin/usersTickets" element={<UsersTickets />} />
           <Route path="/" element={<Main />} />
         </Routes>
       </BrowserRouter>
