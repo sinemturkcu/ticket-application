@@ -5,12 +5,17 @@ import priz from "../assets/priz.jpg";
 import tv from "../assets/tv.png";
 import "../css/ticketCard.css";
 import TicketService from "../services/ticketService";
+import { useParams } from "react-router-dom";
 
 function TicketCard() {
   const [tickets, ticket] = useState([]);
   let ticketService = new TicketService();
+  let { departureCity, destinationCity } = useParams();
+
   useEffect(() => {
-    ticketService.getByFilter().then((result) => ticket(result.data));
+    ticketService
+      .getByFilter(departureCity, destinationCity)
+      .then((result) => ticket(result.data));
   });
 
   return (
