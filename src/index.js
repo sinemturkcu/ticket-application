@@ -7,7 +7,7 @@ import Register from "./pages/Register";
 import Login from "./pages/Login";
 import Navbar from "./components/navbar";
 import SelamAdmin from "./pages/SelamAdmin";
-import SelamUser from "./pages/SelamUser";
+import SelamUser from "./pages/TicketSearch";
 import Main from "./pages/Main";
 import TicketCard from "./components/ticketCard";
 import Ticket from "./pages/Ticket";
@@ -37,7 +37,7 @@ class MyElement extends React.Component {
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
           <Route path="/selamAdmin" element={<SelamAdmin />} />
-          <Route path="/selamUser" element={<SelamUser />} />
+          <Route path="/ticketSearch" element={<SelamUser />} />
           <Route path="/ticket" element={<Ticket />} />
           <Route path="admin/home" element={<AdminHome />} />
           <Route path="admin/allUsers" element={<AllUsers />} />
