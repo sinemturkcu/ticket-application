@@ -1,4 +1,5 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
+import Cookies from "js-cookie";
 
 import { GetByDepartureAndDirections } from "../services/ticketService";
 
@@ -14,6 +15,8 @@ class FindRoadCard extends Component {
     departureCity: "",
     destinationCity: "",
   };
+
+  isAuthenticateUser = localStorage.getItem("role") === "USER";
 
   handleDepartureCity = (e) => {
     this.setState({ departureCity: e.target.value });
@@ -92,43 +95,169 @@ class FindRoadCard extends Component {
         </div>
         <div> Tickets</div>
         <div className="grid grid-cols-1 justify-items-center mb-10 cards">
-          {this.state.tickets.map((ticket) => {
-            console.log(ticket);
-
-            return (
-              <>
-                <div class=" p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-white-800 dark:border-gray-700 mb-10 mt-10 w-11/12 ">
-                  <div className="grid grid-cols-1 gap-2 mb-2 text-md font-semibold tracking-tight text-gray-900 dark:text-black"></div>
-                  <div className="grid grid-cols-4 gap-4 mb-4 mt-4 text-xl font-semibold tracking-tight text-gray-900 dark:text-black">
-                    <div className="text-red-700">{ticket.departureCity}</div>
-                    <div>{">"}</div>
-                    <div className="text-red-700">{ticket.destinationCity}</div>
-                    <div>{ticket.ticketPrice} TL</div>
-                  </div>
-                  <div className="mt-2 text-md">
-                    <div>Capacity: {ticket.capacity}</div>
-                  </div>
-                  <div className="mt-2 mb-4 text-md">
-                    <div>Departure Time: {ticket.departureTime}</div>
-                  </div>
-
-                  <div className="grid grid-cols-3 gap-3 mb-3 ">
-                    <div>
-                      <img src={wifi} className="h-8" alt="wifi"></img>
-                    </div>
-                    <div>
-                      {" "}
-                      <img src={priz} className="h-8" alt="priz"></img>
-                    </div>
-                    <div>
-                      {" "}
-                      <img src={tv} className="h-8" alt="tv"></img>
-                    </div>
+          <>
+            <div class="flex flex-col">
+              <div class="overflow-x-auto sm:mx-0.5 lg:mx-0.5">
+                <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
+                  <div class="overflow-hidden">
+                    <table class="min-w-full">
+                      <thead class="bg-gray-200 border-b">
+                        <tr>
+                          <th
+                            scope="col"
+                            class="text-sm font-medium text-gray-900 px-6 py-4 text-left"
+                          >
+                            #
+                          </th>
+                          <th
+                            scope="col"
+                            class="text-sm font-medium text-gray-900 px-6 py-4 text-left"
+                          >
+                            Departure City
+                          </th>
+                          <th
+                            scope="col"
+                            class="text-sm font-medium text-gray-900 px-6 py-4 text-left"
+                          >
+                            Destination City
+                          </th>
+                          <th
+                            scope="col"
+                            class="text-sm font-medium text-gray-900 px-6 py-4 text-left"
+                          >
+                            Ticket Price
+                          </th>
+                          <th
+                            scope="col"
+                            class="text-sm font-medium text-gray-900 px-6 py-4 text-left"
+                          >
+                            Capacity
+                          </th>
+                          <th
+                            scope="col"
+                            class="text-sm font-medium text-gray-900 px-6 py-4 text-left"
+                          >
+                            Departure Time
+                          </th>
+                          <th
+                            scope="col"
+                            class="text-sm font-medium text-gray-900 px-6 py-4 text-left"
+                          >
+                            {" "}
+                            Rezervation
+                          </th>
+                          <th
+                            scope="col"
+                            class="text-sm font-medium text-gray-900 px-6 py-4 text-left"
+                          >
+                            Buy
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {this.state.tickets.map((user) => (
+                          <tr class="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100">
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                              {user.id}
+                            </td>
+                            <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                              {user.departureCity}
+                            </td>
+                            <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                              {user.destinationCity}
+                            </td>
+                            <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                              {user.seatPrice}
+                            </td>
+                            <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                              {user.capacity}
+                            </td>
+                            <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                              {user.departureTime}
+                            </td>
+                            <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                              {" "}
+                              <div>
+                                {this.isAuthenticateUser === true && (
+                                  <div id="" className="grid justify-center">
+                                    <div className="flex justify-evenly">
+                                      <button
+                                        id="addingButton"
+                                        class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 mt-5 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900"
+                                        onClick={(e) => {
+                                          e.preventDefault();
+                                          //           window.location.href = "/myTickets";
+                                        }}
+                                      >
+                                        Reservation
+                                      </button>
+                                    </div>
+                                  </div>
+                                )}
+                                {this.isAuthenticateUser === false && (
+                                  <div id="" className="grid justify-center">
+                                    <div className="flex justify-evenly">
+                                      <button
+                                        id="addingButton"
+                                        class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 mt-5 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900"
+                                        onClick={(e) => {
+                                          e.preventDefault();
+                                          window.location.href = "/login";
+                                        }}
+                                      >
+                                        Reservation
+                                      </button>
+                                    </div>
+                                  </div>
+                                )}
+                              </div>
+                            </td>
+                            <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                              {" "}
+                              <div>
+                                {this.isAuthenticateUser === true && (
+                                  <div id="" className="grid justify-center">
+                                    <div className="flex justify-evenly">
+                                      <button
+                                        id="addingButton"
+                                        class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 mt-5 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900"
+                                        onClick={(e) => {
+                                          e.preventDefault();
+                                          //   window.location.href = "/buyTicket";
+                                        }}
+                                      >
+                                        Buy
+                                      </button>
+                                    </div>
+                                  </div>
+                                )}
+                                {this.isAuthenticateUser === false && (
+                                  <div id="" className="grid justify-center">
+                                    <div className="flex justify-evenly">
+                                      <button
+                                        id="addingButton"
+                                        class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 mt-5 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900"
+                                        onClick={(e) => {
+                                          e.preventDefault();
+                                          window.location.href = "/login";
+                                        }}
+                                      >
+                                        Buy
+                                      </button>
+                                    </div>
+                                  </div>
+                                )}
+                              </div>
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
                   </div>
                 </div>
-              </>
-            );
-          })}
+              </div>
+            </div>
+          </>
         </div>
       </>
     );
